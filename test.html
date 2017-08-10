@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link href="jsLib/need/layer.css">
+    <script src="jsLib/jquery-2.0.2.min.js"></script>
+
+    <script src="jsLib/layer.js"></script>
+    <script>
+
+        //        window.onload = function(){
+////            layer.msg('hello');
+//            layui.use('layer', function(){
+//                alert("111");
+////                var layer = layui.layer;
+////                layer.msg('hello');
+//            });
+//        }
+
+        $(function () {
+//            $('#test').on('click', function(){
+//
+//            });
+        })
+        //"1","2","3","41","1","4","1","5"
+        function array_repeat(){
+            var arr = [1,2,3,1,5,6,5,7,8];
+            arr.sort();
+            var re = [arr[0]];
+            for(var i=1;i<arr.length;i++){
+                console.log(arr[i]+"   "+re[re.length-1]);
+                if(arr[1]!==re[re.length-1]){
+                    re.push(this[i]);
+                }
+            }
+            return re;
+        }
+        function arrays(){
+            var arr = [1,2,3,1,5,6,5,7,8];
+            var n={},r=[],val,type;
+            for(var i=0;i<arr.length;i++){
+                val = arr[i];
+                type = typeof val;
+                if(!n[val]){
+                    n[val] = [type];
+                    r.push(val);
+                }else if(n[val].indexOf(type)<0){
+                    n[val].push(type);
+                    r.push(val);
+                }
+                return r;
+            }
+        }
+        function removeDuplicatedItem3() {
+            var ret = [];
+            var ar = [1,2,3,1,5,6,5,7,8];
+            ar.forEach(function(e, i, ar) {
+                if (ar.indexOf(e) === i) {
+                    ret.push(e);
+                }
+            });
+
+            return ret;
+        }
+
+    </script>
+</head>
+<body>
+    <button id="test" onclick="removeDuplicatedItem3()">测试</button>
+</body>
+</html>
